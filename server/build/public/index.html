@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+
+   <link href="./css/main.css" rel="stylesheet" />
+   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+
+   <title>Warship Combat</title>
+</head>
+
+<body>
+   <div id="header">
+      <div class="quadrant">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svgLetter" viewBox="10 30 230 30" width="100%"
+            height="100%" preserveAspectRatio="none">
+
+            <path stroke="red" strokeWidth="6.3" fill="none" style="text-decoration-line: underline;"
+               d="M 37.413118,32.837113 30.418197,49.766312 H 25.99056 l -0.768945,-10.145117 -1.190625,3.12539 -2.840137,7.019727 H 17.036068 L 15.138509,32.837113 h 4.725293 l 0.607715,7.664648 0.111621,0.942578 0.0248,0.508496 q 0.04961,0.694531 0.08682,1.00459 0.322461,-1.054199 0.694531,-1.95957 l 3.348633,-8.160742 h 4.080371 l 0.781348,10.120312 q 0.458887,-1.426269 1.029394,-2.80293 l 2.877344,-7.317382 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 44.556867,46.306058 h -4.539258 l -1.575098,3.460254 h -4.191992 l 7.825879,-16.929199 h 5.308203 L 50.0263,49.766312 H 45.028156 Z M 44.25921,42.808597 43.577082,37.909671 41.34466,42.808597 Z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 64.127764,42.672171 1.835547,7.094141 h -5.010547 l -1.488281,-6.436817 h -2.00918 l -1.079004,6.436817 h -4.824511 l 2.827734,-16.929199 h 7.391797 q 3.013769,0 4.464843,1.32705 1.451075,1.314649 1.451075,3.584278 0,3.633886 -3.559473,4.92373 z M 58.038213,39.80723 h 1.909961 q 2.75332,0 2.75332,-1.860352 0,-1.562695 -2.306835,-1.562695 h -1.773536 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 83.835088,36.768656 -6.353222,1.103808 q -0.186036,-0.756543 -0.930176,-1.190625 -0.744141,-0.434082 -1.63711,-0.434082 -1.674316,0 -1.674316,1.116211 0,0.359668 0.235645,0.620117 0.235644,0.260449 1.32705,0.644922 l 2.691309,0.954981 q 1.054199,0.37207 1.95957,1.103808 0.905371,0.719336 1.302246,1.5875 0.396875,0.855762 0.396875,1.835547 0,2.567285 -2.021582,4.241601 -2.009179,1.674317 -5.370215,1.674317 -2.877343,0 -5.022949,-1.16582 -2.133203,-1.165821 -2.976562,-3.559473 l 4.886523,-0.95498 q 0.63252,1.798339 3.125391,1.798339 1.041797,0 1.500683,-0.37207 0.471289,-0.384473 0.471289,-0.868164 0,-0.310059 -0.186035,-0.545703 -0.173633,-0.235645 -0.384472,-0.334863 -0.198438,-0.111622 -1.922364,-0.744141 -2.33164,-0.855762 -3.274218,-1.351855 -0.930176,-0.508497 -1.562696,-1.500684 -0.620117,-0.992188 -0.620117,-2.331641 0,-2.319238 1.699121,-3.91914 1.711524,-1.612305 5.221387,-1.612305 2.678906,0 4.588867,1.128613 1.909961,1.128614 2.530078,3.075782 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 94.550718,42.957425 h -4.402832 l -1.141016,6.808887 h -4.911328 l 2.827734,-16.929199 h 4.911329 l -1.041797,6.225976 h 4.402832 l 1.041796,-6.225976 h 4.911324 l -2.82773,16.929199 h -4.911328 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 108.90023,32.837113 -2.82774,16.929199 h -4.81211 l 2.82774,-16.929199 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 114.95257,43.552738 -1.0418,6.213574 h -4.91133 l 2.82774,-16.929199 h 5.59345 q 1.97198,0 2.86494,0.173632 0.90538,0.161231 1.86036,0.806153 0.96738,0.632519 1.52548,1.711523 0.57051,1.066602 0.57051,2.294434 0,2.38125 -1.55029,4.055566 -1.55029,1.674317 -4.44004,1.674317 z m 0.60771,-3.621485 h 1.16582 q 2.66651,0 2.66651,-1.810742 0,-1.624707 -2.23243,-1.624707 h -1.02939 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 141.20833,43.217874 4.53926,0.58291 q -0.79375,2.778125 -2.72852,4.55166 -1.92236,1.773536 -4.86172,1.773536 -3.1874,0 -5.07256,-2.158008 -1.87275,-2.17041 -1.87275,-5.568652 0,-3.919141 2.31924,-6.93291 2.31924,-3.026172 6.3748,-3.026172 2.95176,0 4.77491,1.810742 1.83554,1.810742 1.87275,4.787304 l -4.7749,0.347266 q -0.0248,-1.562695 -0.48369,-2.331641 -0.45889,-0.768945 -1.5503,-0.768945 -1.88515,0 -2.57969,2.790527 -0.68212,2.790528 -0.68212,6.39043 0,2.604492 2.03398,2.604492 1.00459,0 1.62471,-0.669726 0.62011,-0.669727 1.0666,-2.182813 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 154.65246,50.187991 q -3.00136,0 -5.20898,-1.95957 -2.20762,-1.971973 -2.20762,-5.643066 0,-4.254004 2.46807,-7.218164 2.46807,-2.976563 6.44922,-2.976563 3.1874,0 5.23379,2.083594 2.04638,2.071191 2.04638,5.432227 0,4.29121 -2.43086,7.292578 -2.43085,2.988964 -6.35,2.988964 z m 0.0372,-3.943945 q 1.31465,0 1.99678,-1.103809 0.68213,-1.11621 1.079,-3.261816 0.39688,-2.145605 0.39688,-2.902148 0,-1.302246 -0.60772,-1.971973 -0.59531,-0.669726 -1.5875,-0.669726 -1.89756,0 -2.6665,2.641699 -0.76895,2.641699 -0.76895,4.675683 0,2.59209 2.15801,2.59209 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 185.57152,32.837113 -2.82774,16.929199 h -4.7625 l 1.51309,-9.016504 q 0.23564,-1.389063 0.60771,-2.902149 0.29766,-1.227832 0.40928,-1.872753 -0.14883,0.384472 -0.43408,1.16582 -0.60772,1.624707 -1.11621,2.778125 l -6.37803,9.847461 h -3.05098 l -1.16582,-9.847461 q -0.16123,-1.302246 -0.22324,-2.778125 -0.0496,-0.880566 -0.0992,-1.364258 -0.34726,3.509863 -0.76894,6.052344 l -1.32705,7.9375 h -3.83233 l 2.82774,-16.929199 h 6.80888 l 0.90537,7.491015 q 0.11163,0.917774 0.19844,1.302246 0.17363,-0.570508 0.5085,-1.302246 l 3.34863,-7.491015 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 185.69554,49.766312 2.82773,-16.929199 h 6.99493 q 1.90996,0 3.12539,0.347265 1.21543,0.334864 2.03398,1.389063 0.83096,1.054199 0.83096,2.468066 0,1.550293 -0.97979,2.641699 -0.97978,1.079004 -2.62929,1.451075 2.79052,0.979785 2.79052,3.683496 0,1.971972 -1.33945,3.460253 -1.32705,1.488282 -4.42764,1.488282 z m 6.66006,-10.467578 h 1.93476 q 2.31924,0 2.31924,-1.537891 0,-1.351855 -1.83554,-1.351855 h -1.93477 z m -1.12861,6.72207 h 2.53007 q 1.17823,0 1.62471,-0.496094 0.44649,-0.496094 0.44649,-1.079004 0,-0.719336 -0.4961,-1.153418 -0.48369,-0.446484 -1.45107,-0.446484 h -2.1208 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 211.16995,46.306058 h -4.53926 l -1.57509,3.460254 h -4.192 l 7.82588,-16.929199 h 5.30821 l 2.64169,16.929199 h -4.99814 z m -0.29765,-3.497461 -0.68213,-4.898926 -2.23243,4.898926 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 226.47444,36.681839 -2.19521,13.084473 h -4.91133 l 2.19522,-13.084473 h -3.62149 l 0.65733,-3.894336 h 12.25351 l -0.64492,3.894336 z" />
+            <path stroke="red" strokeWidth="6.3" fill="none"
+               d="m 237.71096,32.837113 -3.15019,11.27373 h -2.86494 l 0.26045,-11.27373 z m -2.31923,12.43955 -0.74414,4.489649 h -4.81211 l 0.74414,-4.489649 z" />
+         </svg>
+
+         <div class="infoBlock">
+            <div class="infoBlock__leftFrame">
+               <div class="settingsMenu">
+                  <button class='button'>
+                     <div class='buttonName'>settings</div>
+                  </button>
+                  <div class="menuFrame">
+                     <div class="menu">
+                        <div class="menu__item menu__item_register">registration</div>
+                        <div class="menu__item menu__item_login">login</div>
+                        <div class="menu__item menu__item_logout">logout</div>
+                        <div class="menu__item menu__item_statistics">show statistics</div>
+                        <div class="menu__item menu__item_restart">restart game</div>
+                        <div class="menu__item menu__item_delRegistration">delete your regisrtation</div>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="timer"></div>
+            </div>
+            <div class="infoBlock__rightFrame">
+               <div class="loginName">
+                  <div>You are not logged in</div>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+      <div class="scene">
+         <div class="cube show-bottom">
+            <div class="cube__face cube__face--front"></div>
+            <div class="cube__face cube__face--back"></div>
+            <div class="cube__face cube__face--right">computer is thinking!<br>0</div>
+            <div class="cube__face cube__face--left"></div>
+            <div class="cube__face cube__face--top">your move</div>
+            <div class="cube__face cube__face--bottom">Loading<br>Wait!</div>
+         </div>
+      </div>
+
+      <div class="frame">
+         <div class="status"></div>
+         <div class="emptyFrame"></div>
+      </div>
+   </div>
+   <div id="boards">
+      <div id="computerBoard" class="board"></div>
+      <div id="playerBoard" class="board"></div>
+   </div>
+
+   <div class="regMenuFrame">
+      <form class="registrationMenu" method="GET" autocomplete="off">
+         <div class="registrationMenu__closeButton">X</div>
+         <div class="registrationMenu__input registrationMenu__input_name">
+            <div>Enter your name</div>
+            <input type="text" name="name">
+         </div>
+         <div class="registrationMenu__input registrationMenu__input_Email" name="mail">
+            <div> Enter your Email</div>
+            <input type="email" name="email">
+         </div>
+         <div class="registrationMenu__input registrationMenu__input_password">
+            <div> Enter the password which you will use for login</div>
+            <div class="registrationMenu__passwordError"></div>
+            <input type="password" name="password" />
+         </div>
+
+         <button class="registrationMenu__button" name="button">Click to register</button>
+         <div class="registrationMenu__validationError"></div>
+      </form>
+      <form class="registrationMenu registrationMenu_login" method="GET">
+         <div class="registrationMenu__closeButton registrationMenu__closeButton_login">X</div>
+         <div class="registrationMenu__input registrationMenu__input_name registrationMenu__input_login">
+            <div>Enter your name</div>
+            <input type="text" name="name">
+         </div>
+         <div class="registrationMenu__input registrationMenu__input_Email registrationMenu__input_login" name="mail">
+            <div> Enter your Email</div>
+            <input type="email" name="email">
+         </div>
+         <div class="registrationMenu__input registrationMenu__input_password registrationMenu__input_login">
+            <div> Enter the password which you will use for login</div>
+            <div class="registrationMenu__passwordError registrationMenu__passwordError_login"></div>
+            <input type="password" name="password" /> <labal class="registrationMenu__restorePassLabal"><input type="checkbox" name="restorePassword">do not remember my password </labal>
+         </div>
+
+         <button class="registrationMenu__button" name="button">Click to login</button>
+         
+         <div class="registrationMenu__validationError"></div>
+      </form>
+   </div>
+
+   <div class="statistics">
+      <div class="statistics__wrapper">
+
+         <div class="statistics__bookmarkWrapper">
+            <div class="statistics__bookmarkTable">
+               <div>table</div>
+            </div>
+            <div class="statistics__bookmarkChart statistics__bookmarkChart_active">
+               <div>chart</div>
+            </div>
+            <div class="statistics__bookmarkDeleteStatistics">
+               <div>delete</div>
+            </div>
+         </div>
+
+         <div class="statistics__statPage">
+            <div class="chart chart_active">
+               <div class="chart__legend">
+                  <div class="chart__victories"></div>
+                  <div class="chart__defeats"></div>
+               </div>
+               <div class="chart__diagram">
+                  <div class="chart__diagramFirstElem"></div>
+                  <div class="chart__diagramSecondElem"></div>
+                  <div class="chart__diagramThirdElem"></div>
+               </div>
+            </div>
+            <div class="table"></div>
+            <div class="deleteStatMenu">
+               <div>
+                  <p>Do you want</p>
+                  <p> to delete your statistics data?</p>
+               </div>
+               <div class="deleteStatMenu__buttonsWrapper">
+                  <button class="deleteStatMenu__button deleteStatMenu__button_yes">yes</button><button
+                     class="deleteStatMenu__button deleteStatMenu__button_no">no</button>
+               </div>
+               <div class="deleteStatMenu__message" ></div>
+            </div>
+         </div>
+
+         <button class="statistics__button">close</button>
+      </div>
+   </div>
+   <div class="notificationWrapper">
+      <div class="notification"></div>
+   </div>
+   <div class="deleteRegistrationMenuWrapper">
+      <div class="deleteRegistrationMenu">
+         <p>Do You realy want to delete your registration?</p>
+         <div class="deleteRegistrationMenu__wrapperBtns">
+         <button class="deleteRegistrationMenu__btn  deleteRegistrationMenu__btn_yes" >yes</button>
+         <button class="deleteRegistrationMenu__btn  deleteRegistrationMenu__btn_no" >no</button>
+         <div class="deleteRegistrationMenu__message"></div>
+         </div>
+      </div>
+
+   </div>
+   <div class="svgClockWrapper">
+      <svg class="svgClock" version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+         enable-background="new 0 0 100 100" xml:space="preserve">
+         <circle fill="darkblue" stroke="red" stroke-width="1" stroke-miterlimit="10" cx="50" cy="50" r="48" />
+         <line fill="none" stroke-linecap="round" stroke="white" stroke-width="1" stroke-miterlimit="10" x1="50" y1="50"
+            x2="85" y2="50.5">
+            <animateTransform attributeName="transform" dur="2s" type="rotate" from="0 50 50" to="360 50 50"
+               repeatCount="indefinite" />
+         </line>
+         <line fill="none" stroke-linecap="round" stroke="white" stroke-width="1" stroke-miterlimit="10" x1="50" y1="50"
+            x2="49.5" y2="74">
+            <animateTransform attributeName="transform" dur="15s" type="rotate" from="0 50 50" to="360 50 50"
+               repeatCount="indefinite" />
+         </line>
+      </svg>
+   </div>
+
+   <div class="restoreGameMenuWrapper">
+      <div class="restoreGameMenu">
+         <p>You have unfinished game. Do you want to restore it?</p>
+         <button class="restoreGameMenu__btn restoreGameMenu__btn_yes">Yes</button><button
+            class="restoreGameMenu__btn restoreGameMenu__btn_no">No</button>
+      </div>
+   </div>
+
+   <template id="templateRow">
+      <div class="table__row">
+         <div class="table__column table__column_one">date</div>
+         <div class="table__column table__column_two">
+            <div>game</div>
+            <div>duration</div>
+         </div>
+         <div class="table__column table__column_three">result</div>
+         <div class="table__column table__column_four">moves</div>
+         <div class="table__column table__column_five">
+            <div>replay</div>
+            <div>game</div>
+         </div>
+      </div>
+   </template>
+   <template id="btnReplayGame">
+      <button class="table__btnReplayGame">replay</button>
+   </template>
+
+
+   <script src="./main.js"></script>
+</body>
+
+</html>
+
+<!--
+   <div class="chart__diagram">
+                  <div class="chart__firstElem"></div>
+                  <div class="chart__secondElem"></div>
+                  <div class="chart__thirdElem"></div>
+               </div>
+-->

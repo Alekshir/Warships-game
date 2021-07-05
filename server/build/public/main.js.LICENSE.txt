@@ -1,0 +1,1 @@
+//!this.playerBoard ? shipElement.classList.add('ship_unvisible') : null;

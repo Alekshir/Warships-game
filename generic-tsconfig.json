@@ -1,0 +1,12 @@
+{
+"compilerOptions": {
+    "outDir": "./server/build/declarations",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "composite":true,
+    "emitDeclarationOnly":true
+  }
+}

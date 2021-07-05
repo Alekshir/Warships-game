@@ -1,0 +1,2 @@
+new class{constructor(){"end"in this?Object.defineProperty(this,"end",{value:false,enumerable:!0,configurable:!0,writable:!0}):this.end=false,self.addEventListener("message",(e=>{"start"===e.data.action?this.countTime(null===e.data.time?0:e.data.time):"stop"===e.data.action&&(this.end=!0)}))}countTime(e){!0!==this.end?(self.postMessage({action:"move",time:e}),setTimeout((()=>{this.countTime(++e)}),1e3)):self.postMessage({action:"stop",time:e})}};
+//# sourceMappingURL=worker.js.map

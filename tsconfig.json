@@ -1,0 +1,17 @@
+{
+
+  "extends": "./generic-tsconfig.json",
+  
+  "include": [
+    "./src/main/**/*"//, "./src/webworker/**/*" //any file in any directory of src
+  ],
+  "references": [{
+    "path": "./src/webworker"
+  }],
+  "compilerOptions":{
+    "lib": ["esnext", "dom", "dom.Iterable"],
+    "tsBuildInfoFile": "./server/build/declarations/tsbuildInfoFile1.txt"
+  }
+  
+  
+}
