@@ -12,7 +12,8 @@ All enemy ships are invisible.  When you hit an enemy ship, its damaged part app
 becomes visible. You should sink all enemy ships. You have one shot for each move.
 If you miss, the cell becomes green.
 
-****the settings Menu is available***\
+****the settings Menu is available***
+
 ***Items are:****
 * registration
 * login
