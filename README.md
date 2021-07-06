@@ -52,7 +52,7 @@ There are three options in the statistics menu:
 
 if the game was not finished, you will be offered to restore it next time.
 
-***Controls:**
+***Controls:***
 
 Desktop
 * To move the ship press the left button of the mouse over the ship and drag.
