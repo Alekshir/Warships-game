@@ -14,7 +14,7 @@ If you miss, the cell becomes green.
 
 ***the settings Menu is available***
 
-***Items are:****
+***Items are:***
 * registration
 * login
 * logout
